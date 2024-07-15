@@ -1,0 +1,42 @@
+mat-card{
+  max-width:40%;
+  margin:auto
+}
+
+.mat-column-name,
+.mat-column-rollNumber,
+.mat-column-age,
+.mat-column-actions {
+  flex: 1;
+  min-width: 100px; /* Adjust this value as needed */
+}
+
+.mat-mdc-table{
+  border-radius: 5px;
+}
+
+.mat-table {
+  max-width: 80%;
+  margin:auto;
+  
+}
+
+/* Optional: Add some padding to the cells for better spacing */
+.mat-cell, .mat-header-cell {
+  padding: 0 10%;
+  text-align: center;
+}
+
+/* Ensure the content doesn't overflow */
+.mat-cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.no-data-message {
+  text-align: center;
+  
+  font-size: 12px;
+  color: #666;
+}
