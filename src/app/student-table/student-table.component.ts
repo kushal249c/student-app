@@ -36,26 +36,26 @@ export class StudentTableComponent {
 
   editingStudent: Student | null = null;
 
-  startEdit(student: Student) {
+  startEdit(student: Student) { //starting edit
     this.editingStudent = { ...student };
   }
 
-  cancelEdit() {
+  cancelEdit() {  //canceling edit
     this.editingStudent = null;
   }
 
-  saveEdit() {
+  saveEdit() { // saving edit information and sending the selected student to app component
     if (this.editingStudent) {
       this.editStudent.emit(this.editingStudent);
       this.editingStudent = null;
     }
   }
 
-  onDelete(student: Student) {
+  onDelete(student: Student) { //sending the selected student to app component
     this.deleteStudent.emit(student);
   }
 
-  isEditValid(): boolean {
+  isEditValid(): boolean {   //validations when editing
     return !!(this.editingStudent &&
       this.editingStudent.name &&
       this.editingStudent.name.match(/^[a-zA-Z\s]*$/) &&
