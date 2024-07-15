@@ -34,7 +34,7 @@ export class StudentFormComponent {
 
   
 
-  nameValidator(): ValidatorFn {
+  nameValidator(): ValidatorFn { //seperate validation function for name 
     return (control: AbstractControl): {[key: string]: any} | null => {
       const valid = /^[a-zA-Z\s]*$/.test(control.value);
       return valid ? null : {'invalidName': {value: control.value}};
@@ -52,7 +52,7 @@ export class StudentFormComponent {
     
   }
 
-  onSubmit() {
+  onSubmit() {  //sending the data to app component to save data and resetting the form to accept new entries
     if (this.studentForm.valid) {
       const newStudent: Student = this.studentForm.value;
       this.addStudent.emit(newStudent);
@@ -60,11 +60,5 @@ export class StudentFormComponent {
       this.studentForm.reset();
       this.formGroupDirective.resetForm();
     }
-    
-      
-
-      
-    
-    
   }
 }
